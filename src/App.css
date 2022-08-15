@@ -61,9 +61,22 @@ a {
 }
 
 /*
-**********
-* FOOTER *
-**********
+*************
+* COUNTRIES *
+*************
+*/
+
+.countrylisting {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+/*
+****************
+* COUNTRYCARD *
+****************
 */
 
 .countrybox {
