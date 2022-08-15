@@ -1,5 +1,7 @@
+import CountryCard from "./CountryCard";
+
 const Countries = () => {
-  return <p className="parag">This will be a list of countries</p>;
+  return <CountryCard country="test country" />;
 };
 
 export default Countries;

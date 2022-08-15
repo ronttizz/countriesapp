@@ -66,6 +66,34 @@ a {
 **********
 */
 
+.countrybox {
+  padding: 1rem;
+  margin: 1rem;
+  border: 0.25rem white solid;
+  width: fit-content;
+}
+
+.info,
+.commonname,
+.officialname {
+  color: white;
+}
+
+.officialname,
+.commonname {
+  text-align: center;
+}
+
+.info {
+  display: inline-block;
+}
+
+/*
+**********
+* FOOTER *
+**********
+*/
+
 .footer {
   font-size: small;
   text-align: center;

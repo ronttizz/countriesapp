@@ -1,5 +1,5 @@
 const CountryPage = () => {
-  return <p className="parag">This will have info about one spesific country</p>;
+  return <p>This will have information about the country</p>;
 };
 
 export default CountryPage;
