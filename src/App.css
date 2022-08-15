@@ -17,7 +17,7 @@
 */
 
 .main {
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 120px);
 }
 
 a {
@@ -40,6 +40,24 @@ a {
   padding: 0.5rem 0.75rem;
   margin: 0.75rem;
   color: white;
+}
+
+/*
+********
+* MAIN *
+********
+*/
+
+.welcomeheader {
+  margin: 2rem;
+  color: white;
+  max-width: 35vw;
+}
+
+.parag {
+  margin: 2rem;
+  color: white;
+  max-width: 35vw;
 }
 
 /*
