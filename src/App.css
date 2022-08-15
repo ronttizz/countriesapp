@@ -20,6 +20,11 @@
   min-height: calc(100vh - 90px);
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 /*
 **************
 * NAVIGATION *
@@ -34,7 +39,7 @@
   display: inline-block;
   padding: 0.5rem 0.75rem;
   margin: 0.75rem;
-  background-color: aqua;
+  color: white;
 }
 
 /*
@@ -46,4 +51,8 @@
 .footer {
   font-size: small;
   text-align: center;
+}
+
+.copy {
+  color: white;
 }
