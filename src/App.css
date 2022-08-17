@@ -84,6 +84,7 @@ a {
   margin: 1rem;
   border: 0.25rem white solid;
   width: fit-content;
+  position: relative;
 }
 
 .info,
@@ -97,6 +98,12 @@ a {
   text-align: center;
 }
 
+.flag {
+  width: 60px;
+  position: absolute;
+  top: -20px;
+  right: -10px;
+}
 .infoblock {
   display: inline-block;
 }
