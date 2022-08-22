@@ -7,7 +7,7 @@ const CountryCard = ({ country, flags, currencies, languages, population }) => {
         <h1 className="commonname">{country}</h1>
         <p className="officialname">{country}</p>
       </div>
-      <img src={flags.svg} className="flag" />
+      <img src={flags.svg} className="flag" alt={country} />
 
       <div className="countryinfo">
         <div className="infoblock">
