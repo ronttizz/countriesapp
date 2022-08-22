@@ -103,8 +103,9 @@ a {
 .flag {
   width: 60px;
   position: absolute;
-  top: -20px;
+  top: -15px;
   right: -10px;
+  border: 1px grey solid;
 }
 .infoblock {
   display: inline-block;
