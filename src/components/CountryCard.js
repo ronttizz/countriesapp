@@ -1,4 +1,6 @@
-const CountryCard = ({ country, flags, currencies, languages }) => {
+import millify from "millify";
+
+const CountryCard = ({ country, flags, currencies, languages, population }) => {
   return (
     <div className="countrybox">
       <div className="names">
@@ -26,6 +28,7 @@ const CountryCard = ({ country, flags, currencies, languages }) => {
         </div>
         <div className="infoblock">
           <p className="info">Population</p>
+          <p className="info">{millify(population)}</p>
         </div>
       </div>
     </div>
