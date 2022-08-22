@@ -85,6 +85,8 @@ a {
   border: 0.25rem white solid;
   width: fit-content;
   position: relative;
+  background-color: grey;
+  width: 350px;
 }
 
 .info,
@@ -106,6 +108,7 @@ a {
 }
 .infoblock {
   display: inline-block;
+  width: 33%;
 }
 
 /*
