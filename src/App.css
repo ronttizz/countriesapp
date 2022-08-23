@@ -101,10 +101,10 @@ a {
 }
 
 .flag {
-  width: 60px;
+  width: 100px;
   position: absolute;
-  top: -15px;
-  right: -10px;
+  top: -20px;
+  right: -20px;
   border: 1px grey solid;
 }
 .infoblock {
