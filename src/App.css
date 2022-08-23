@@ -96,11 +96,27 @@ a {
 .country {
   max-width: 80vw;
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   padding: 1rem;
   color: white;
   background: rgba(128, 128, 128, 70%);
   border-radius: 10px;
+}
+
+.countryname {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.countryinfo {
+  display: flex;
+}
+
+.bigflag {
+  width: 40vw;
 }
 
 /*
