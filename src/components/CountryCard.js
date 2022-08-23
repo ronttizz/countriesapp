@@ -7,7 +7,7 @@ import { LinkContainer } from "react-router-bootstrap";
 const CountryCard = ({ population, languages, currencies, name, flags, ccn3 }) => {
   return (
     <div className="countrybox">
-      <Card style={{ width: `25rem`, margin: `1rem` }}>
+      <Card style={{ width: "25rem", margin: `1rem` }}>
         <Card.Img src={flags?.svg} className="flag" alt={name?.common + " flag"} />
         <Card.Header>
           <Card.Title style={{ textAlign: `center` }}>{name?.common}</Card.Title>

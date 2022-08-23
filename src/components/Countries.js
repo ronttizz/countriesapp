@@ -35,13 +35,18 @@ const Countries = () => {
     <div>
       <InputGroup
         size="lg"
-        style={{ maxWidth: "50vw", margin: "0 auto", marginBottom: "2rem" }}
+        style={{
+          minWidth: "350px",
+          maxWidth: "40vw",
+          margin: "0 auto",
+          marginBottom: "2rem",
+        }}
       >
-        <InputGroup.Text id="inputGroup-sizing-lg">Search</InputGroup.Text>
         <Form.Control
           aria-label="Large"
           aria-describedby="inputGroup-sizing-sm"
           onChange={search}
+          placeholder="Search..."
         />
       </InputGroup>
       <div className="countrylisting">
