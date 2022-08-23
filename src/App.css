@@ -79,37 +79,12 @@ a {
 ****************
 */
 
-.countrybox {
-  padding: 1rem;
-  margin: 1rem;
-  border: 0.25rem white solid;
-  width: fit-content;
-  position: relative;
-  background-color: grey;
-  width: 350px;
-}
-
-.info,
-.commonname,
-.officialname {
-  color: white;
-}
-
-.officialname,
-.commonname {
-  text-align: center;
-}
-
 .flag {
   width: 100px;
   position: absolute;
   top: -20px;
   right: -20px;
   border: 1px grey solid;
-}
-.infoblock {
-  display: inline-block;
-  width: 33%;
 }
 
 /*
