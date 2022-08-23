@@ -13,6 +13,7 @@ const CountryPage = () => {
   );
   const [coat, setCoat] = useState();
   const [loading, setLoading] = useState(true);
+  const [weather, setWeather] = useState();
 
   useEffect(() => {
     Axios.get("https://restcountries.com/v3.1/alpha/" + params.name)
@@ -23,9 +24,21 @@ const CountryPage = () => {
         setCountry(res?.data);
         setFlag(res?.data[0]?.flags.svg);
         setCoat(res?.data[0]?.coatOfArms?.svg);
-        setLoading(false);
         console.log(res?.data[0]?.flags.svg);
         console.log(res?.data);
+        Axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${res?.data[0]?.latlng[0]}&lon=${res?.data[0]?.latlng[1]}&units=metric&appid=` +
+            process.env.REACT_APP_WEATHER_API
+        )
+          .catch((err) => {
+            console.log("Something went wrong went getting wheather info. " + err);
+            setLoading(false);
+          })
+          .then((response) => {
+            console.log(response?.data);
+            setWeather(response?.data);
+            setLoading(false);
+          });
       });
   }, []);
 
@@ -131,7 +144,7 @@ const CountryPage = () => {
                 <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415z" />
                 <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z" />
               </svg>{" "}
-              This will the the weather
+              This will have weather information
             </li>
           </ul>
         </div>
