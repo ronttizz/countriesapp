@@ -10,7 +10,9 @@ Information displayed also includes weather data for the capital city provided b
 
 Some information is still missing for example some countries doesn't have currency, language or capital city listed which may cause that no data is displayed, this can be seen when looking up for example Antartica.
 
-Weather is provided for the capital city and as some countries doesn'have capital city the data can not be provided.
+Weather is provided for the capital city and as some countries doesn'have capital city the data can not be provided. Some differences in city names may be found as there might be different names for same city.
+
+The data is only provided by the API's and I do not have control over those, so if you find errors regarding the API data please contact the API owner.
 
 Background picture is provided by [Greg Rosenke at Unsplash](https://unsplash.com/photos/GOWz0zTf_vY) under Unsplash License.
 
