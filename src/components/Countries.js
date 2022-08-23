@@ -97,7 +97,7 @@ const Countries = () => {
                     </ListGroup.Item>
                   </ListGroup>
                   <LinkContainer
-                    to={`${country?.name?.common}`}
+                    to={`${country?.ccn3}`}
                     style={{ width: "fit-content", margin: "0.75rem auto" }}
                   >
                     <Button>Read more</Button>

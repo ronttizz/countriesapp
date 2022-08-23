@@ -93,6 +93,13 @@ a {
 ******************
 */
 
+.loading {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  margin: 5rem auto;
+}
+
 .country {
   max-width: 80vw;
   display: flex;
@@ -115,8 +122,17 @@ a {
   display: flex;
 }
 
+.infolist {
+  list-style-type: none;
+}
+
+.infolist > li {
+  margin-top: 1rem;
+}
+
 .bigflag {
-  width: 40vw;
+  width: 20vw;
+  margin-right: 3vw;
 }
 
 /*
