@@ -6,8 +6,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Spinner from "react-bootstrap/Spinner";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Button from "react-bootstrap/Button";
 import millify from "millify";
-import { Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 const Countries = () => {
