@@ -24,8 +24,6 @@ const CountryPage = () => {
         setCountry(res?.data);
         setFlag(res?.data[0]?.flags.svg);
         setCoat(res?.data[0]?.coatOfArms?.svg);
-        console.log(res?.data[0]?.flags.svg);
-        console.log(res?.data);
         Axios.get(
           `https://api.openweathermap.org/data/2.5/weather?q=${res?.data[0]?.capital}&units=metric&appid=` +
             process.env.REACT_APP_WEATHER_API
