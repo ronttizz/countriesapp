@@ -46,16 +46,14 @@ const Countries = () => {
         {!loading ? (
           countries
             .filter((country) => {
-              if (
+              return (
                 country?.name?.common
                   .toLowerCase()
                   .includes(searchTerm.toLowerCase().trim()) ||
                 country?.name?.official
                   .toLowerCase()
                   .includes(searchTerm.toLowerCase().trim())
-              ) {
-                return country;
-              }
+              );
             })
             .map((country, i) => {
               return (
