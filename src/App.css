@@ -51,13 +51,15 @@ a {
 .welcomeheader {
   margin: 2rem;
   color: white;
-  max-width: 35vw;
+  min-width: 30rem;
+  max-width: 35rem;
 }
 
 .parag {
   margin: 2rem;
   color: white;
-  max-width: 35vw;
+  min-width: 20rem;
+  max-width: 25rem;
 }
 
 /*

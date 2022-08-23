@@ -12,6 +12,10 @@ const Home = () => {
         APIs used in this project are{" "}
         <a href="https://restcountries.com/" target="_blank">
           REST Countries API
+        </a>{" "}
+        and{" "}
+        <a href="https://openweathermap.org/" target="_blank">
+          OpenWeatherMap.org
         </a>
       </p>
     </section>
