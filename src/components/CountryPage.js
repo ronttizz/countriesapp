@@ -27,20 +27,37 @@ const CountryPage = () => {
         console.log(res?.data[0]?.flags.svg);
         console.log(res?.data);
         Axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${res?.data[0]?.latlng[0]}&lon=${res?.data[0]?.latlng[1]}&units=metric&appid=` +
+          `https://api.openweathermap.org/data/2.5/weather?q=${res?.data[0]?.capital}&units=metric&appid=` +
             process.env.REACT_APP_WEATHER_API
         )
           .catch((err) => {
             console.log("Something went wrong went getting wheather info. " + err);
+            console.log(err);
             setLoading(false);
           })
           .then((response) => {
-            console.log(response?.data);
             setWeather(response?.data);
             setLoading(false);
           });
       });
   }, []);
+
+  const wind = (deg) => {
+    const direction = [
+      "North",
+      "North-East",
+      "East",
+      "South-East",
+      "South",
+      "South-West",
+      "West",
+      "North-West",
+    ];
+
+    let index = Math.round(((deg %= 360) < 0 ? deg + 360 : deg) / 45) % 8;
+
+    return direction[index];
+  };
 
   return !loading ? (
     <div className="country">
@@ -144,7 +161,26 @@ const CountryPage = () => {
                 <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415z" />
                 <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z" />
               </svg>{" "}
-              This will have weather information
+              {weather?.name
+                ? "Current weather in " + weather?.name + ": "
+                : "Cannot get weather data "}
+              {weather?.weather[0]?.description
+                ? weather?.weather[0]?.description + " "
+                : ""}
+              {weather?.main?.temp ? weather?.main?.temp + "°C " : ""}
+              {weather?.main?.feels_like
+                ? "feels like " + weather?.main?.feels_like + "°C"
+                : ""}{" "}
+              {weather?.main?.humidity
+                ? "with " + weather?.main?.humidity + "% humidity."
+                : ""}{" "}
+              {weather?.wind?.deg
+                ? "Wind is blowing towards " +
+                  wind(weather?.wind?.deg) +
+                  " with " +
+                  weather?.wind?.speed +
+                  "m/s."
+                : ""}
             </li>
           </ul>
         </div>
