@@ -74,9 +74,9 @@ a {
 }
 
 /*
-****************
+***************
 * COUNTRYCARD *
-****************
+***************
 */
 
 .flag {
@@ -88,7 +88,23 @@ a {
 }
 
 /*
-********
+******************
+* SINGLE COUNTRY *
+******************
+*/
+
+.country {
+  max-width: 80vw;
+  display: flex;
+  margin: 0 auto;
+  padding: 1rem;
+  color: white;
+  background: rgba(128, 128, 128, 70%);
+  border-radius: 10px;
+}
+
+/*
+**********
 * FOOTER *
 **********
 */

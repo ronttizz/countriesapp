@@ -8,6 +8,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import millify from "millify";
 import { Button } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
@@ -95,9 +96,12 @@ const Countries = () => {
                       </ListGroup>
                     </ListGroup.Item>
                   </ListGroup>
-                  <Button style={{ width: "fit-content", margin: "0.75rem auto" }}>
-                    Read more
-                  </Button>
+                  <LinkContainer
+                    to={`${country?.name?.common}`}
+                    style={{ width: "fit-content", margin: "0.75rem auto" }}
+                  >
+                    <Button>Read more</Button>
+                  </LinkContainer>
                 </Card>
               );
             })
