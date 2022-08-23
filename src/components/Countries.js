@@ -1,14 +1,15 @@
 // import CountryCard from "./CountryCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Spinner from "react-bootstrap/Spinner";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import Spinner from "react-bootstrap/Spinner";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import millify from "millify";
 import { LinkContainer } from "react-router-bootstrap";
+import CountryCard from "./CountryCard";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
@@ -34,7 +35,7 @@ const Countries = () => {
     <div>
       <InputGroup
         size="lg"
-        style={{ width: "75vw", margin: "0 auto", marginBottom: "2rem" }}
+        style={{ maxWidth: "50vw", margin: "0 auto", marginBottom: "2rem" }}
       >
         <InputGroup.Text id="inputGroup-sizing-lg">Search</InputGroup.Text>
         <Form.Control
@@ -57,53 +58,7 @@ const Countries = () => {
               );
             })
             .map((country, i) => {
-              return (
-                <Card style={{ width: `25rem`, margin: `1rem` }} key={i}>
-                  <Card.Img
-                    src={country?.flags?.svg}
-                    className="flag"
-                    alt={country?.name?.common + " flag"}
-                  />
-                  <Card.Header>
-                    <Card.Title style={{ textAlign: `center` }}>
-                      {country?.name?.common}
-                    </Card.Title>
-                    <Card.Text style={{ textAlign: `center` }}>
-                      {country?.name?.official}
-                    </Card.Text>
-                  </Card.Header>
-                  <ListGroup style={{ borderRadius: "0" }}>
-                    <ListGroup.Item>
-                      Currencie(s)
-                      <ListGroup variant="flush">
-                        {Object.values(country?.currencies || {}).map((currency, i) => (
-                          <ListGroup.Item key={i}>{currency.name}</ListGroup.Item>
-                        ))}
-                      </ListGroup>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                      Language(s)
-                      <ListGroup variant="flush">
-                        {Object.values(country?.languages || {}).map((language, i) => (
-                          <ListGroup.Item key={i}>{language}</ListGroup.Item>
-                        ))}
-                      </ListGroup>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                      Population
-                      <ListGroup variant="flush">
-                        <ListGroup.Item>{millify(country?.population)}</ListGroup.Item>
-                      </ListGroup>
-                    </ListGroup.Item>
-                  </ListGroup>
-                  <LinkContainer
-                    to={`${country?.ccn3}`}
-                    style={{ width: "fit-content", margin: "0.75rem auto" }}
-                  >
-                    <Button>Read more</Button>
-                  </LinkContainer>
-                </Card>
-              );
+              return <CountryCard key={i} {...country} />;
             })
         ) : (
           <Spinner animation="border" role="status" variant="light" />

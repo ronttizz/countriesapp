@@ -79,11 +79,15 @@ a {
 ***************
 */
 
+.countrybox {
+  margin: 2rem;
+}
+
 .flag {
   width: 100px;
   position: absolute;
   top: -20px;
-  right: -20px;
+  right: -40px;
   border: 1px grey solid;
 }
 
