@@ -118,6 +118,13 @@ a {
   align-items: center;
 }
 
+.leftpanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .countryinfo {
   display: flex;
 }
@@ -132,7 +139,11 @@ a {
 
 .bigflag {
   width: 20vw;
-  margin-right: 3vw;
+}
+
+.coatofarms {
+  width: 10vw;
+  margin-top: 2rem;
 }
 
 /*
