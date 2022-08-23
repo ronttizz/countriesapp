@@ -2,13 +2,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import Button from "react-bootstrap/Button";
-import millify from "millify";
-import { LinkContainer } from "react-router-bootstrap";
 import CountryCard from "./CountryCard";
 
 const Countries = () => {
