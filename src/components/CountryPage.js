@@ -5,7 +5,7 @@ import Axios from "axios";
 import millify from "millify";
 
 const CountryPage = () => {
-  const params = useParams();
+  const { name } = useParams();
 
   const [country, setCountry] = useState();
   const [flag, setFlag] = useState(
@@ -16,7 +16,7 @@ const CountryPage = () => {
   const [weather, setWeather] = useState();
 
   useEffect(() => {
-    Axios.get("https://restcountries.com/v3.1/alpha/" + params.name)
+    Axios.get("https://restcountries.com/v3.1/alpha/" + name)
       .catch((err) => {
         console.log("Something went wrong with the REST Countries API call. " + err);
       })
