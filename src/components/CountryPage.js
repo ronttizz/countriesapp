@@ -173,7 +173,7 @@ const CountryPage = () => {
                 ? "with " + weather?.main?.humidity + "% humidity."
                 : ""}{" "}
               {weather?.wind?.deg
-                ? "Wind is blowing towards " +
+                ? "Wind is blowing from " +
                   wind(weather?.wind?.deg) +
                   " with " +
                   weather?.wind?.speed +
