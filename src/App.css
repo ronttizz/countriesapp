@@ -51,13 +51,15 @@ a {
 .welcomeheader {
   margin: 2rem;
   color: white;
-  max-width: 35vw;
+  min-width: 30rem;
+  max-width: 35rem;
 }
 
 .parag {
   margin: 2rem;
   color: white;
-  max-width: 35vw;
+  min-width: 20rem;
+  max-width: 25rem;
 }
 
 /*
@@ -74,41 +76,80 @@ a {
 }
 
 /*
-****************
+***************
 * COUNTRYCARD *
-****************
+***************
 */
 
 .countrybox {
-  padding: 1rem;
-  margin: 1rem;
-  border: 0.25rem white solid;
-  width: fit-content;
-  position: relative;
-  background-color: grey;
-  width: 350px;
-}
-
-.info,
-.commonname,
-.officialname {
-  color: white;
-}
-
-.officialname,
-.commonname {
-  text-align: center;
+  margin: 2rem;
 }
 
 .flag {
-  width: 60px;
+  width: 100px;
   position: absolute;
   top: -20px;
-  right: -10px;
+  right: -40px;
+  border: 1px grey solid;
 }
-.infoblock {
-  display: inline-block;
-  width: 33%;
+
+/*
+******************
+* SINGLE COUNTRY *
+******************
+*/
+
+.loading {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  margin: 5rem auto;
+}
+
+.country {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1rem;
+  color: white;
+  background: rgba(128, 128, 128, 70%);
+  border-radius: 10px;
+}
+
+.countryname {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftpanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.countryinfo {
+  display: flex;
+}
+
+.infolist {
+  list-style-type: none;
+}
+
+.infolist > li {
+  margin-top: 1rem;
+}
+
+.bigflag {
+  width: 20vw;
+}
+
+.coatofarms {
+  width: 10vw;
+  margin-top: 2rem;
 }
 
 /*

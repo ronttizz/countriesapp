@@ -10,8 +10,12 @@ const Home = () => {
       </p>
       <p className="parag">
         APIs used in this project are{" "}
-        <a href="https://restcountries.com/" target="_blank">
+        <a href="https://restcountries.com/" target="_blank" rel="noreferrer">
           REST Countries API
+        </a>{" "}
+        and{" "}
+        <a href="https://openweathermap.org/" target="_blank" rel="noreferrer">
+          OpenWeatherMap.org
         </a>
       </p>
     </section>
