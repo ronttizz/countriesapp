@@ -1,8 +1,9 @@
 // import CountryCard from "./CountryCard";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import CountryCard from "./CountryCard";
+import { initCountries, search } from "../features/countries/countriesSlice";
 
 import Spinner from "react-bootstrap/Spinner";
 import Form from "react-bootstrap/Form";
@@ -13,19 +14,26 @@ const Countries = () => {
   // const [loading, setLoading] = useState(true);
   // const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    axios
-      .get("https://restcountries.com/v3.1/all")
-      .catch((error) => console.log(error))
-      .then((res) => {
-        setCountries(res.data);
-        setLoading(false);
-      });
-    // eslint-disable-next-line
-  }, []);
+  const dispatch = useDispatch();
+  const countries = useSelector((state) => state.countries.countries);
+  const loading = useSelector((state) => state.countries.isLoading);
+  const searchTerm = useSelector((state) => state.countries.search);
 
-  const search = (e) => {
-    setSearchTerm(e.target.value);
+  useEffect(() => {
+    // axios
+    //   .get("https://restcountries.com/v3.1/all")
+    //   .catch((error) => console.log(error))
+    //   .then((res) => {
+    //     setCountries(res.data);
+    //     setLoading(false);
+    //   });
+
+    dispatch(initCountries());
+    // eslint-disable-next-line
+  }, [dispatch]);
+
+  const searching = (e) => {
+    dispatch(search(e.target.value));
   };
 
   return (
@@ -42,7 +50,7 @@ const Countries = () => {
         <Form.Control
           aria-label="Large"
           aria-describedby="inputGroup-sizing-sm"
-          onChange={search}
+          onChange={searching}
           placeholder="Search..."
         />
       </InputGroup>
