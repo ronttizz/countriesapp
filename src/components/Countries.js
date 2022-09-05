@@ -21,6 +21,7 @@ const Countries = () => {
         setCountries(res.data);
         setLoading(false);
       });
+    // eslint-disable-next-line
   }, []);
 
   const search = (e) => {
