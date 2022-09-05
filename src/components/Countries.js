@@ -1,10 +1,12 @@
 // import CountryCard from "./CountryCard";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import axios from "axios";
+
+import CountryCard from "./CountryCard";
+
 import Spinner from "react-bootstrap/Spinner";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import CountryCard from "./CountryCard";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
