@@ -33,7 +33,7 @@ const Countries = () => {
   }, [dispatch]);
 
   const searching = (e) => {
-    dispatch(search(e.target.value));
+    dispatch(search(e.target.value.trim()));
   };
 
   return (
