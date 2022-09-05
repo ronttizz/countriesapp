@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import millify from "millify";
 import { LinkContainer } from "react-router-bootstrap";
 
-const CountryCard = ({ population, languages, currencies, name, flags, ccn3 }) => {
+const CountryCard = ({ population, languages, currencies, name, flags, country }) => {
   return (
     <div className="countrybox">
       <Card style={{ width: "25rem", margin: `1rem` }}>
@@ -38,8 +38,9 @@ const CountryCard = ({ population, languages, currencies, name, flags, ccn3 }) =
           </ListGroup.Item>
         </ListGroup>
         <LinkContainer
-          to={`${ccn3}`}
+          to={`/countries/${name.common}`}
           style={{ width: "fit-content", margin: "0.75rem auto" }}
+          state={{ country }}
         >
           <Button>Read more</Button>
         </LinkContainer>
