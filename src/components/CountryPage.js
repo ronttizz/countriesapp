@@ -38,6 +38,7 @@ const CountryPage = () => {
             setLoading(false);
           });
       });
+    // eslint-disable-next-line
   }, []);
 
   const wind = (deg) => {
