@@ -9,9 +9,9 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
 const Countries = () => {
-  const [countries, setCountries] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
+  // const [countries, setCountries] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     axios
