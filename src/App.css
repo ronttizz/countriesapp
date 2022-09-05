@@ -108,6 +108,7 @@ a {
 
 .country {
   width: 80vw;
+  max-width: 1050px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
