@@ -4,13 +4,10 @@ export const countriesSlice = createSlice({
   name: "countries",
   initialState: {
     countries: {},
-    loading: true,
   },
-  reducers: {
-    getCountry: (state, action) => {},
-  },
+  reducers: {},
 });
 
-export const { getCountry } = countriesSlice.actions;
+export const {} = countriesSlice.actions;
 
 export default countriesSlice.reducer;
