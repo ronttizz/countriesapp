@@ -2,11 +2,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import CountryCard from "./CountryCard";
-import { initCountries, search } from "../features/countries/countriesSlice";
+import { initCountries } from "../features/countries/countriesSlice";
 
 import Spinner from "react-bootstrap/Spinner";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
+import Search from "./Search";
 
 const Countries = () => {
   const dispatch = useDispatch();
@@ -19,28 +18,9 @@ const Countries = () => {
     // eslint-disable-next-line
   }, [dispatch]);
 
-  const searching = (e) => {
-    dispatch(search(e.target.value.trim()));
-  };
-
   return (
     <div>
-      <InputGroup
-        size="lg"
-        style={{
-          minWidth: "350px",
-          maxWidth: "40vw",
-          margin: "0 auto",
-          marginBottom: "2rem",
-        }}
-      >
-        <Form.Control
-          aria-label="Large"
-          aria-describedby="inputGroup-sizing-sm"
-          onChange={searching}
-          placeholder="Search..."
-        />
-      </InputGroup>
+      <Search />
       <div className="countrylisting">
         {!loading ? (
           countries
