@@ -44,6 +44,7 @@ const CountryCard = ({ population, languages, currencies, name, flags, country }
         >
           <Button>Read more</Button>
         </LinkContainer>
+        <Button>Favourite</Button>
       </Card>
     </div>
   );
