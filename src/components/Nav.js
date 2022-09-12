@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   const itemCount = useSelector((state) => state.countries.favourites.length);
-  console.log(itemCount);
+
   return (
     <nav className="nav">
       <ul>
