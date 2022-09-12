@@ -35,6 +35,7 @@ const Favourites = () => {
   ) : (
     <div className="countrylisting white">
       <h1>No favourites added, yet...</h1>
+      <p>Go to countries page and start adding</p>
     </div>
   );
 };
