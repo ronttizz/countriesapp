@@ -43,14 +43,8 @@ export const initCountries = () => {
 
 export const initFavourites = () => {
   return async (dispatch) => {
-    const favourites = localStorage.getItem("favourites");
-    dispatch(getFavourites(favourites));
-  };
-};
-
-export const updateFavourites = (state) => {
-  return async () => {
-    localStorage.setItem("favourites", state.favourites);
+    let favourites = localStorage.getItem("favourites");
+    favourites.length > 0 ? dispatch(getFavourites(favourites)) : (favourites = []);
   };
 };
 
