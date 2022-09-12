@@ -3,11 +3,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
 import millify from "millify";
 import { LinkContainer } from "react-router-bootstrap";
-import { useDispatch } from "react-redux";
-import { addFavourite } from "../features/countries/countriesSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavourite, removeFavourite } from "../features/countries/countriesSlice";
 
 const CountryCard = ({ population, languages, currencies, name, flags, country }) => {
   const dispatch = useDispatch();
+
+  const favourites = useSelector((state) => state.countries.favourites);
 
   return (
     <div className="countrybox">
@@ -48,7 +50,13 @@ const CountryCard = ({ population, languages, currencies, name, flags, country }
         >
           <Button>Read more</Button>
         </LinkContainer>
-        <Button onClick={() => dispatch(addFavourite(country))}>Favourite</Button>
+        {favourites.includes(country) ? (
+          <Button onClick={() => dispatch(removeFavourite(country))}>
+            Remove Favourite
+          </Button>
+        ) : (
+          <Button onClick={() => dispatch(addFavourite(country))}>Favourite</Button>
+        )}
       </Card>
     </div>
   );
