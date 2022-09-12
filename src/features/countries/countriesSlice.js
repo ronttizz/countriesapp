@@ -19,6 +19,9 @@ export const countriesSlice = createSlice({
     search(state, action) {
       state.search = action.payload;
     },
+    getFavourites(state, action) {
+      state.favourites = action.payload;
+    },
     addFavourite(state, action) {
       state.favourites = [...state.favourites, action.payload];
     },
@@ -38,7 +41,26 @@ export const initCountries = () => {
   };
 };
 
-export const { getCountries, isLoading, search, addFavourite, removeFavourite } =
-  countriesSlice.actions;
+export const initFavourites = () => {
+  return async (dispatch) => {
+    const favourites = localStorage.getItem("favourites");
+    dispatch(getFavourites(favourites));
+  };
+};
+
+export const updateFavourites = (state) => {
+  return async () => {
+    localStorage.setItem("favourites", state.favourites);
+  };
+};
+
+export const {
+  getCountries,
+  isLoading,
+  search,
+  addFavourite,
+  removeFavourite,
+  getFavourites,
+} = countriesSlice.actions;
 
 export default countriesSlice.reducer;
