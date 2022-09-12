@@ -4,7 +4,7 @@ import countryService from "../../services/countries";
 export const countriesSlice = createSlice({
   name: "countries",
   initialState: {
-    countries: {},
+    countries: [],
     isLoading: true,
     search: "",
     favourites: [],
@@ -22,6 +22,9 @@ export const countriesSlice = createSlice({
     addFavourite(state, action) {
       state.favourites = [...state.favourites, action.payload];
     },
+    removeFavourite(state, action) {
+      state.favourites = state.favourites.filter(!action.payload);
+    },
   },
 });
 
@@ -33,6 +36,7 @@ export const initCountries = () => {
   };
 };
 
-export const { getCountries, isLoading, search, addFavourite } = countriesSlice.actions;
+export const { getCountries, isLoading, search, addFavourite, removeFavourite } =
+  countriesSlice.actions;
 
 export default countriesSlice.reducer;
