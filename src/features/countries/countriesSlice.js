@@ -7,6 +7,7 @@ export const countriesSlice = createSlice({
     countries: {},
     isLoading: true,
     search: "",
+    favourites: [],
   },
   reducers: {
     getCountries(state, action) {
@@ -17,6 +18,9 @@ export const countriesSlice = createSlice({
     },
     search(state, action) {
       state.search = action.payload;
+    },
+    addFavourite(state, action) {
+      state.favourites = [...state.favourites, action.payload];
     },
   },
 });
@@ -29,6 +33,6 @@ export const initCountries = () => {
   };
 };
 
-export const { getCountries, isLoading, search } = countriesSlice.actions;
+export const { getCountries, isLoading, search, addFavourite } = countriesSlice.actions;
 
 export default countriesSlice.reducer;
