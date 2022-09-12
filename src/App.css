@@ -63,9 +63,9 @@ a {
 }
 
 /*
-*************
-* COUNTRIES *
-*************
+*********************
+* LISTING COUNTRIES *
+*********************
 */
 
 .countrylisting {
@@ -73,6 +73,10 @@ a {
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
+}
+
+.white {
+  color: white;
 }
 
 /*

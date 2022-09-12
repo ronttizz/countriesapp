@@ -8,7 +8,7 @@ const Favourites = () => {
   const loading = useSelector((state) => state.countries.isLoading);
   const searchTerm = useSelector((state) => state.countries.search);
 
-  return (
+  return favourites.length > 0 ? (
     <div>
       <Search />
       <div className="countrylisting">
@@ -31,6 +31,10 @@ const Favourites = () => {
           <Spinner animation="border" role="status" variant="light" />
         )}
       </div>
+    </div>
+  ) : (
+    <div className="countrylisting white">
+      <h1>No favourites added, yet...</h1>
     </div>
   );
 };
