@@ -23,7 +23,9 @@ export const countriesSlice = createSlice({
       state.favourites = [...state.favourites, action.payload];
     },
     removeFavourite(state, action) {
-      state.favourites = state.favourites.filter(!action.payload);
+      state.favourites = state.favourites.filter(
+        (item) => item.name.common !== action.payload.name.common
+      );
     },
   },
 });
