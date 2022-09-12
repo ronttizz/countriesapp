@@ -4,6 +4,7 @@ import Layout from "./pages/Layout";
 import Home from "./components/Home";
 import Countries from "./components/Countries";
 import CountryPage from "./components/CountryPage";
+import Favourites from "./components/Favourites";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="countries" element={<Countries />} />
           <Route path="countries/:name" element={<CountryPage />} />
+          <Route path="favourites" element={<Favourites />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -10,6 +10,9 @@ const Nav = () => {
         <li>
           <NavLink to="/countries">Countries</NavLink>
         </li>
+        <li>
+          <NavLink to="/favourites">Favourites</NavLink>
+        </li>
       </ul>
     </nav>
   );
