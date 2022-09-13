@@ -50,7 +50,7 @@ const CountryCard = ({ population, languages, currencies, name, flags, country }
         >
           <Button>Read more</Button>
         </LinkContainer>
-        {favourites.includes(country) ? (
+        {favourites.some((item) => item.name.official === country.name.official) ? (
           <Button onClick={() => dispatch(removeFavourite(country))}>
             Remove Favourite
           </Button>
