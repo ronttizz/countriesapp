@@ -48,6 +48,10 @@ export const initFavourites = () => {
   };
 };
 
+export const saveFavourites = (state) => {
+  localStorage.setItem("favourites", JSON.stringify(state.favourites));
+};
+
 export const {
   getCountries,
   isLoading,

@@ -5,8 +5,13 @@ import Home from "./components/Home";
 import Countries from "./components/Countries";
 import CountryPage from "./components/CountryPage";
 import Favourites from "./components/Favourites";
+import { useDispatch } from "react-redux";
+import { initFavourites } from "./features/countries/countriesSlice";
 
 function App() {
+  const dispatch = useDispatch();
+
+  dispatch(initFavourites());
   return (
     <BrowserRouter>
       <Routes>
