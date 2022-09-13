@@ -43,8 +43,8 @@ export const initCountries = () => {
 
 export const initFavourites = () => {
   return async (dispatch) => {
-    let favourites = localStorage.getItem("favourites");
-    favourites.length > 0 ? dispatch(getFavourites(favourites)) : (favourites = []);
+    let favourites = JSON.parse(localStorage.getItem("favourites"));
+    favourites ? dispatch(getFavourites(favourites)) : (favourites = []);
   };
 };
 
