@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { search } from "../features/countries/countriesSlice";
 
@@ -8,8 +8,14 @@ import InputGroup from "react-bootstrap/InputGroup";
 const Search = () => {
   const dispatch = useDispatch();
 
+  const searchTerm = useSelector((state) => state.countries.search);
+
   const searching = (e) => {
     dispatch(search(e.target.value.trim()));
+  };
+
+  const clear = () => {
+    dispatch(search(""));
   };
 
   return (
@@ -27,7 +33,11 @@ const Search = () => {
         aria-describedby="inputGroup-sizing-sm"
         onChange={searching}
         placeholder="Search..."
+        value={searchTerm}
       />
+      <button className="inner-btn" onClick={clear}>
+        X
+      </button>
     </InputGroup>
   );
 };
