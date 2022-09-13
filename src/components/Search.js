@@ -4,6 +4,7 @@ import { search } from "../features/countries/countriesSlice";
 
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import { Button } from "react-bootstrap";
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -35,9 +36,9 @@ const Search = () => {
         placeholder="Search..."
         value={searchTerm}
       />
-      <button className="inner-btn" onClick={clear}>
-        X
-      </button>
+      <Button variant="light" onClick={clear}>
+        <b>X</b>
+      </Button>
     </InputGroup>
   );
 };
