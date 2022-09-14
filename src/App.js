@@ -10,6 +10,9 @@ import { initFavourites } from "./features/countries/countriesSlice";
 
 function App() {
   const dispatch = useDispatch();
+  let scrollPos = 0;
+
+  document.addEventListener("scroll", () => (scrollPos = window.scrollY));
 
   dispatch(initFavourites());
   return (
