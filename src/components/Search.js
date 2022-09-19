@@ -5,7 +5,6 @@ import { search } from "../features/countries/countriesSlice";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Button } from "react-bootstrap";
-import { XCircle } from "react-bootstrap-icons";
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -38,7 +37,7 @@ const Search = () => {
         value={searchTerm}
       />
       <Button variant="light" onClick={clear}>
-        <XCircle />
+        X
       </Button>
     </InputGroup>
   );
