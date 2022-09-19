@@ -33,8 +33,15 @@ a {
 **************
 */
 
+.navContainer {
+  position: sticky;
+  top: 0;
+  z-index: 10001;
+}
+
 .nav {
-  min-height: 60px;
+  background-color: black;
+  min-height: fit-content;
 }
 
 .nav > ul > li {
@@ -87,8 +94,16 @@ a {
   padding: 2rem 4rem;
   background-color: rgba(245, 245, 245, 60%);
   width: fit-content;
-  margin: auto;
+  margin: 2rem auto;
   border-radius: 7px;
+}
+
+.bi-heart-fill {
+  color: red;
+}
+
+.bi-heart:hover {
+  color: red;
 }
 
 /*
@@ -103,8 +118,8 @@ a {
 
 .fav {
   position: absolute;
-  top: 5%;
-  left: 5%;
+  top: 7%;
+  left: 7%;
 }
 
 .flag {
