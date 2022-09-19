@@ -14,6 +14,23 @@ const CountryCard = ({ population, languages, currencies, name, flags, country }
   return (
     <div className="countrybox">
       <Card style={{ width: "25rem", margin: `1rem` }}>
+        <div className="fav">
+          {favourites.some((item) => item.name.official === country.name.official) ? (
+            <i
+              className="bi bi-heart-fill"
+              onClick={() => {
+                dispatch(removeFavourite(country));
+              }}
+            ></i>
+          ) : (
+            <i
+              className="bi bi-heart"
+              onClick={() => {
+                dispatch(addFavourite(country));
+              }}
+            ></i>
+          )}
+        </div>
         <Card.Img src={flags?.svg} className="flag" alt={name?.common + " flag"} />
         <Card.Header>
           <Card.Title style={{ textAlign: `center` }}>{name?.common}</Card.Title>
@@ -50,23 +67,6 @@ const CountryCard = ({ population, languages, currencies, name, flags, country }
         >
           <Button>Read more</Button>
         </LinkContainer>
-        {favourites.some((item) => item.name.official === country.name.official) ? (
-          <Button
-            onClick={() => {
-              dispatch(removeFavourite(country));
-            }}
-          >
-            Remove Favourite
-          </Button>
-        ) : (
-          <Button
-            onClick={() => {
-              dispatch(addFavourite(country));
-            }}
-          >
-            Favourite
-          </Button>
-        )}
       </Card>
     </div>
   );
