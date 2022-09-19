@@ -7,7 +7,7 @@ export const countriesSlice = createSlice({
     countries: [],
     isLoading: true,
     search: "",
-    favourites: [],
+    favourites: JSON.parse(localStorage.getItem("favourites")) || [],
   },
   reducers: {
     getCountries(state, action) {
@@ -41,24 +41,17 @@ export const initCountries = () => {
   };
 };
 
-export const initFavourites = () => {
-  return async (dispatch) => {
-    let favourites = JSON.parse(localStorage.getItem("favourites"));
-    favourites ? dispatch(getFavourites(favourites)) : (favourites = []);
-  };
-};
-
-export const saveFavourites = (state) => {
-  localStorage.setItem("favourites", JSON.stringify(state.favourites));
+export const saveFavourites = (data) => {
+  localStorage.setItem("favourites", JSON.stringify(data));
 };
 
 export const {
   getCountries,
   isLoading,
   search,
+  getFavourites,
   addFavourite,
   removeFavourite,
-  getFavourites,
 } = countriesSlice.actions;
 
 export default countriesSlice.reducer;

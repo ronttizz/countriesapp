@@ -4,11 +4,7 @@ import Button from "react-bootstrap/Button";
 import millify from "millify";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addFavourite,
-  removeFavourite,
-  saveFavourites,
-} from "../features/countries/countriesSlice";
+import { addFavourite, removeFavourite } from "../features/countries/countriesSlice";
 
 const CountryCard = ({ population, languages, currencies, name, flags, country }) => {
   const dispatch = useDispatch();
@@ -58,7 +54,6 @@ const CountryCard = ({ population, languages, currencies, name, flags, country }
           <Button
             onClick={() => {
               dispatch(removeFavourite(country));
-              dispatch(saveFavourites());
             }}
           >
             Remove Favourite
@@ -67,7 +62,6 @@ const CountryCard = ({ population, languages, currencies, name, flags, country }
           <Button
             onClick={() => {
               dispatch(addFavourite(country));
-              dispatch(saveFavourites());
             }}
           >
             Favourite

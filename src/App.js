@@ -5,16 +5,18 @@ import Home from "./components/Home";
 import Countries from "./components/Countries";
 import CountryPage from "./components/CountryPage";
 import Favourites from "./components/Favourites";
-import { useDispatch } from "react-redux";
-import { initFavourites } from "./features/countries/countriesSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { saveFavourites } from "./features/countries/countriesSlice";
+import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
-  let scrollPos = 0;
+  const favorites = useSelector((state) => state.countries.favourites);
 
-  document.addEventListener("scroll", () => (scrollPos = window.scrollY));
+  useEffect(() => {
+    saveFavourites(favorites);
+  }, [dispatch, favorites]);
 
-  dispatch(initFavourites());
   return (
     <BrowserRouter>
       <Routes>
