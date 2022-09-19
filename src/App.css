@@ -27,6 +27,21 @@ a {
   text-decoration: none;
 }
 
+.wrapper {
+  position: relative;
+}
+
+.scroll {
+  position: fixed;
+  right: 1%;
+  bottom: 2%;
+  z-index: 1000;
+  font-size: 3rem;
+  color: white;
+  rotate: 90;
+  transform: rotate(90deg);
+}
+
 /*
 **************
 * NAVIGATION *
@@ -118,8 +133,8 @@ a {
 
 .fav {
   position: absolute;
-  top: 7%;
-  left: 7%;
+  top: 1.5rem;
+  left: 1.5rem;
 }
 
 .flag {
