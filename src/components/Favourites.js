@@ -1,29 +1,19 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
+import { Spinner } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import CountryCard from "./CountryCard";
-import { initCountries } from "../features/countries/countriesSlice";
-
-import Spinner from "react-bootstrap/Spinner";
 import Search from "./Search";
 
-const Countries = () => {
-  const dispatch = useDispatch();
-  const countries = useSelector((state) => state.countries.countries);
+const Favourites = () => {
+  const favourites = useSelector((state) => state.countries.favourites);
   const loading = useSelector((state) => state.countries.isLoading);
   const searchTerm = useSelector((state) => state.countries.search);
 
-  useEffect(() => {
-    dispatch(initCountries());
-    // eslint-disable-next-line
-  }, [dispatch]);
-
-  return (
+  return favourites.length > 0 ? (
     <div>
       <Search />
       <div className="countrylisting">
         {!loading ? (
-          countries
+          favourites
             .filter((country) => {
               return (
                 country?.name?.common
@@ -42,7 +32,12 @@ const Countries = () => {
         )}
       </div>
     </div>
+  ) : (
+    <div className="countrylisting white">
+      <h1>No favourites added, yet...</h1>
+      <p>Go to countries page and start adding</p>
+    </div>
   );
 };
 
-export default Countries;
+export default Favourites;

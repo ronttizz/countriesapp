@@ -4,9 +4,10 @@ import countryService from "../../services/countries";
 export const countriesSlice = createSlice({
   name: "countries",
   initialState: {
-    countries: {},
+    countries: [],
     isLoading: true,
     search: "",
+    favourites: JSON.parse(localStorage.getItem("favourites")) || [],
   },
   reducers: {
     getCountries(state, action) {
@@ -17,6 +18,17 @@ export const countriesSlice = createSlice({
     },
     search(state, action) {
       state.search = action.payload;
+    },
+    getFavourites(state, action) {
+      state.favourites = action.payload;
+    },
+    addFavourite(state, action) {
+      state.favourites = [...state.favourites, action.payload];
+    },
+    removeFavourite(state, action) {
+      state.favourites = state.favourites.filter(
+        (item) => item.name.common !== action.payload.name.common
+      );
     },
   },
 });
@@ -29,6 +41,17 @@ export const initCountries = () => {
   };
 };
 
-export const { getCountries, isLoading, search } = countriesSlice.actions;
+export const saveFavourites = (data) => {
+  localStorage.setItem("favourites", JSON.stringify(data));
+};
+
+export const {
+  getCountries,
+  isLoading,
+  search,
+  getFavourites,
+  addFavourite,
+  removeFavourite,
+} = countriesSlice.actions;
 
 export default countriesSlice.reducer;

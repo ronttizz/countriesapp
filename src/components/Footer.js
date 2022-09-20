@@ -4,7 +4,13 @@ const Footer = () => {
       <small>
         <p className="copy">
           Background image from{" "}
-          <a href="https://unsplash.com/photos/GOWz0zTf_vY">Unsplash Greg Rosenke</a>{" "}
+          <a
+            href="https://unsplash.com/photos/GOWz0zTf_vY"
+            target="_blank"
+            rel="noreferrer"
+          >
+            © Unsplash Greg Rosenke
+          </a>{" "}
         </p>
       </small>
     </footer>
