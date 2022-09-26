@@ -52,11 +52,16 @@ a {
   position: sticky;
   top: 0;
   z-index: 10001;
+  margin-bottom: 1rem;
 }
 
 .nav {
   background-color: black;
   min-height: fit-content;
+}
+
+.nav > ul {
+  margin: 0;
 }
 
 .nav > ul > li {
