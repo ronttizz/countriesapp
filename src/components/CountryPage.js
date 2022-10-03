@@ -5,10 +5,16 @@ import millify from "millify";
 
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavourite, removeFavourite } from "../features/countries/countriesSlice";
 
 const CountryPage = () => {
   const location = useLocation();
   const country = location.state.country;
+
+  const dispatch = useDispatch();
+
+  const favourites = useSelector((state) => state.countries.favourites);
 
   const [loading, setLoading] = useState(true);
   const [weather, setWeather] = useState();
@@ -52,6 +58,23 @@ const CountryPage = () => {
   return !loading ? (
     <div className="country">
       <div className="countryname">
+        <div className="fav">
+          {favourites.some((item) => item.name.official === country.name.official) ? (
+            <i
+              className="bi bi-heart-fill"
+              onClick={() => {
+                dispatch(removeFavourite(country));
+              }}
+            ></i>
+          ) : (
+            <i
+              className="bi bi-heart"
+              onClick={() => {
+                dispatch(addFavourite(country));
+              }}
+            ></i>
+          )}
+        </div>
         <h2>{country?.name?.common}</h2>
         <h4>{country?.name?.official}</h4>
       </div>
