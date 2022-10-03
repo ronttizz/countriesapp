@@ -1,5 +1,7 @@
 # Countries App
 
+Deployd to Netlify at [Countries App](https://ronttizz-countries-app.netlify.app/)
+
 ## Description
 
 Countries app using [REST countries](https://restcountries.com/) to show some basic information about different countries in the world.
