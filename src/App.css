@@ -148,6 +148,7 @@ a {
   top: -20px;
   right: -40px;
   border: 1px grey solid;
+  z-index: 100;
 }
 
 /*
